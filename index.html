@@ -81,39 +81,47 @@
     ============================================================
     -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const openBtn = document.getElementById('music-tab');
-            const closeBtn = document.getElementById('close-player-btn');
-            const playerContainer = document.getElementById('music-player-container');
-            const audio = document.getElementById('song-player');
+        // --- Music Player Controls ---
+        const playerContainer = document.getElementById('music-player-container');
+        const openTab = document.getElementById('music-tab');
+        const closeBtn = document.getElementById('close-player-btn');
+        const song = document.getElementById('song-player');
+        
+        function openPlayer() {
+            playerContainer.classList.add('open');
+            // Try to play music when opened, respecting autoplay policies
+            song.play().catch(e => console.log("Autoplay was prevented. User must interact."));
+        }
 
-            if (openBtn && closeBtn && playerContainer && audio) {
-                
-                // Open the player
-                openBtn.addEventListener('click', (event) => {
-                    // Stop this click from bubbling up to the document
-                    event.stopPropagation();
-                    playerContainer.classList.add('open');
-                });
+        function closePlayer() {
+            playerContainer.classList.remove('open');
+            // We DON'T pause the music here, so it keeps playing.
+            // The song.pause() line has been removed.
+        }
 
-                // Close the player
-                closeBtn.addEventListener('click', (event) => {
-                    // Stop this click from bubbling up to the document
-                    event.stopPropagation();
-                    playerContainer.classList.remove('open');
-                    //audio.pause();
-                });
-
-                // NEW: Click listener on the whole document
-                document.addEventListener('click', (event) => {
-                    // Check if the player is open AND the click was NOT on the player container
-                    if (playerContainer.classList.contains('open') && !event.target.closest('#music-player-container')) {
-                        playerContainer.classList.remove('open');
-                        audio.pause();
-                    }
-                });
+        openTab.addEventListener('click', (event) => {
+            event.stopPropagation(); // Stop click from closing player immediately
+            openPlayer();
+        });
+        
+        closeBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Stop click from triggering 'outside' click
+            closePlayer();
+        });
+        
+        // --- Click outside to close ---
+        document.addEventListener('click', function(event) {
+            // Check if the player is open AND the click was NOT inside the player container
+            if (playerContainer.classList.contains('open') && !playerContainer.contains(event.target)) {
+                closePlayer();
             }
         });
+        
+        // Stop clicks *inside* the player from bubbling up to the document
+        playerContainer.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
     </script>
 
 </body>
