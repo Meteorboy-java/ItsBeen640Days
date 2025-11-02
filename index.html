@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Years of Starry Eyes</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header class="header-section">
+        <h1 class="main-title">Two Years of Starry Eyes, Million More to Come, Only for US.</h1>
+        <p class="sub-text">3.11.23 - our password and forever</p>
+    </header>
+
+    <section class="photo-section">
+        <div class="aesthetic-frame">
+            <img src="Us.jpg" alt="Lmk if you don't like this pic" class="couple-photo">
+        </div>
+    </section>
+
+    <section class="starry-eyes-section">
+        <h2 class="section-title">Starry Eyes</h2>
+        <div class="message-box">
+            <p class="love-message">
+                We've made it soo far already, and even after 2 years i have to admit, i keep falling deeper and deeper and deeper and deeper in love, with you. 
+                Thank you for being the BEST PARTNER EVERRRR.
+                <span class="love-message-reveal">I LOVE YOU. YOU'RE ALL I SEE</span>
+            </p>
+            <p class="lyric-reference">— *Your Lavender Marriage Husband*</p>
+        </div>
+    </section>
+
+    <section class="epilogue-section">
+        <p class="epilogue-text">
+            <span class="heart-word">THEN,</span> <span class="heart-word">NOW,</span><br>
+            <span class="heart-word">FOREVER</span> <span class="heart-word">AND</span><br>
+            <span class="heart-word">LONG</span> <span class="heart-word">AFTER</span><br>
+            <span class="heart-word">ETERNITY.</span><br>
+            <span class="heart-word">I</span> <span class="heart-word">LOVE</span><br>
+            <span class="heart-word">YOU</span>
+        </p>
+    </section>
+
+    <footer class="footer-section">
+        <p class="footer-text">Nothing's Gonna Hurt You, Baby</p>
+    </footer>
+
+    
+    <div id="music-player-container">
+        <div id="music-player">
+            <div id="close-player-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </div>
+            
+            <p class="player-title">Starry Eyes</p>
+            
+            <audio id="song-player" controls preload="auto" autoplay>
+                <source src="Starry_Eyes.flac" type="audio/mpeg">
+                Change to another browser to play the music.
+            </audio>
+        </div>
+
+        <div id="music-tab">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- 
+    ============================================================
+    == JAVASCRIPT LOGIC (Updated for click-outside-to-close)
+    ============================================================
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openBtn = document.getElementById('music-tab');
+            const closeBtn = document.getElementById('close-player-btn');
+            const playerContainer = document.getElementById('music-player-container');
+            const audio = document.getElementById('song-player');
+
+            if (openBtn && closeBtn && playerContainer && audio) {
+                
+                // Open the player
+                openBtn.addEventListener('click', (event) => {
+                    // Stop this click from bubbling up to the document
+                    event.stopPropagation();
+                    playerContainer.classList.add('open');
+                });
+
+                // Close the player
+                closeBtn.addEventListener('click', (event) => {
+                    // Stop this click from bubbling up to the document
+                    event.stopPropagation();
+                    playerContainer.classList.remove('open');
+                    audio.pause();
+                });
+
+                // NEW: Click listener on the whole document
+                document.addEventListener('click', (event) => {
+                    // Check if the player is open AND the click was NOT on the player container
+                    if (playerContainer.classList.contains('open') && !event.target.closest('#music-player-container')) {
+                        playerContainer.classList.remove('open');
+                        audio.pause();
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+
