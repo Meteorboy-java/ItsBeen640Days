@@ -1,0 +1,509 @@
+/* General Setup */
+body {
+    /* Basic body styles */
+    color: #f0f0f0; 
+    
+    /* Use Montserrat for general text for better readability */
+    font-family: 'Montserrat', sans-serif; 
+    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    
+    /* Ensure content is above the background */
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Background pseudo-element that handles all background effects */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+    /* Background setup */
+    background-color: #1a1a1a;
+    background-image: 
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWZmZmZmZlQY9JAAAAHHRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRoYtw24AAABNSURBVDjL7ZK7DoAwDEP7H9b5/3/hK/4V6K2lYVfI+eWp0J5v+B4G9HqN8b2Z/N9k+F+x/b+p/f+w/p/u/2/w/d+O/p/l/q/i/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d+mC48i8hJ+9rIAAAALklEQVQ4jWPgZmBgYGZiYmBgYGJkZmBgYGRkYGRiYmJkYGdgZGRiZmBgYGBgZmRiYGDgAAMAEE+zQ70w7XwAAAAASUVORK5CYII='),
+        url('musixmatch_starry_eyes_bg.jpg');
+    background-size: auto, cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+    /* Apply effects only to background */
+    background-blend-mode: overlay, luminosity;
+    filter: blur(8px) grayscale(90%) contrast(120%) brightness(80%);
+    transform: scale(1.05);
+}
+
+/* --- SECTION BACKGROUND CHANGES FOR COHESION --- */
+
+/* Header Section */
+.header-section {
+    padding: 15vh 5vw;
+    animation: fadeIn 3s ease-in-out;
+    /* Changed to a very dark, slightly transparent black to let BG show */
+    background: rgba(0, 0, 0, 0.7); 
+    position: relative;
+    z-index: 2;
+}
+
+/* Photo Section - CAS Album Art Style */
+.photo-section {
+    padding: 60px 0;
+    /* Changed to a more subtle, slightly transparent dark grey */
+    background: rgba(26, 26, 26, 0.6); 
+    /* Softened inner shadow */
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5); 
+    position: relative;
+    z-index: 2;
+}
+
+/* Starry Eyes Section (The Letter) */
+/* Starry Eyes Section (The Letter) */
+.starry-eyes-section {
+    padding: 100px 10vw;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Changed background to dark, transparent layer with a subtle fade to black at the bottom */
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Footer Section */
+/* Footer Section */
+.footer-section {
+    padding: 60px 0;
+    /* Remove top margin as the sections will now blend */
+    margin-top: 0; 
+    
+    /* REMOVE BORDER: This was the main visual separator */
+    border-top: none; 
+    
+    /* Use a solid, very dark background to continue the blend */
+    background: rgba(0, 0, 0, 0.8); 
+    
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ACCENT COLOR CHANGES (from Indigo/Purple to #aeb8b1) --- */
+
+.main-title {
+    /* The core CAS logo font */
+    font-family: 'ITC Mendoza Roman', sans-serif; 
+    font-size: 2.2rem; 
+    font-weight: 650; /* Medium weight from file */
+    
+    /* Crucial CAS logo styling */
+    text-transform: uppercase; 
+    letter-spacing: 0.25em;    /* Increased spacing to match the aesthetic */
+    line-height: 1.2;
+    margin: 0;
+    
+    /* Muted gray-green text shadow */
+    text-shadow: 0 0 15px rgba(174, 184, 177, 0.6), 0 0 30px rgba(174, 184, 177, 0.3); 
+    
+    animation: fadeIn 3s ease-in-out; 
+}
+.sub-text {
+    /* Remains Montserrat for softer look */
+    font-family: 'ITC Mendoza Roman', sans-serif; 
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-shadow: 0 0 15px rgba(174, 184, 177, 0.7), 0 0 30px rgba(174, 184, 177, 0.4);
+    opacity: 0.65;
+    margin-top: 1rem;
+    color: #c0c0c0; 
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+/* Update the section title to be wide-spaced and all-caps too */
+.section-title {
+    /* The core CAS logo font */
+    font-family: 'ITC Mendoza Roman', sans-serif; 
+    font-size: 1.9rem;
+    font-weight: 500; /* Medium weight from file */
+    margin-bottom: 40px;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    letter-spacing: 12px; /* Extra wide spacing for strong visual impact */
+    text-shadow: 0 0 8px rgba(174, 184, 177, 0.5); 
+}
+.aesthetic-frame {
+    display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    /* UPDATED: Muted gray-green box shadow */
+    box-shadow: 0 0 30px rgba(174, 184, 177, 0.7), 0 0 10px rgba(255, 255, 255, 0.1); 
+    transition: all 0.8s ease-in-out;
+    background: rgba(10, 10, 10, 0.7);
+    filter: saturate(0.8);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    /* UPDATED: Muted gray-green text shadow */
+    text-shadow: 0 0 8px rgba(174, 184, 177, 0.5); 
+}
+
+.message-box {
+    /* UPDATED: Muted gray-green border line */
+    border-left: 2px solid rgba(174, 184, 177, 0.7); 
+    padding-left: 30px;
+    text-align: left;
+    /* UPDATED: Muted gray-green drop shadow */
+    filter: drop-shadow(0 0 5px rgba(174, 184, 177, 0.3)); 
+}
+
+/*
+============================================================
+== 1. NEW STYLE FOR THE "I LOVE YOU" ANIMATION
+============================================================
+*/
+.love-message-reveal {
+    opacity: 0;
+    /* Re-uses the fadeInGlow animation defined below */
+    animation: fadeInGlow 2s ease-in-out forwards;
+    animation-delay: 1.5s; /* Wait 1.5s before fading in */
+    
+    /* Make it stand out a bit */
+    display: block; /* Puts it on its own line */
+    margin-top: 1em; /* Adds some space above it */
+    font-weight: 600; /* Bolder */
+    letter-spacing: 0.1em; /* A bit wider */
+}
+
+
+/* Epilogue Section */
+.epilogue-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px; /* Adjust height as needed */
+    background-color: #0a0a0a; /* Fallback color */
+    
+    /* The stunning underwater image */
+    background-image: url('underwater_couple_epilogue.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll; /* Scrolls with the content */
+    background-repeat: no-repeat;
+    
+    /* Apply CAS aesthetic filters to the background image */
+    filter: grayscale(90%) blur(2px) brightness(70%) contrast(110%);
+    
+    /* Blend with the overall grain and transparency */
+    background-blend-mode: luminosity, overlay; 
+    
+    display: flex; /* For centering text if any */
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* No internal padding, image fills */
+    margin-top: 0; /* Ensures seamless blend from above */
+
+    /* Add a subtle overlay to help text readability and blend with adjacent sections */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.9), inset 0 0 50px rgba(0,0,0,0.8);
+    z-index: 1; /* Slightly lower than content, higher than body::before */
+}
+
+.epilogue-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWZmZmZmZlQY9JAAAAHHRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRoYtw24AAABNSURBVDjL7ZK7DoAwDEP7H9b5/3/hK/4V6K2lYVfI+eWp0J5v+B4G9HqN8b2Z/N9k+F+x/b+p/f+w/p/u/2/w/d+O/p/l/q/i/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d/m/Q/x/t/j/c/0/z/d+w/p/l/o/z/d+mC48i8hJ+9rIAAAALklEQVQ4jWPgZmBgYGZiYmBgYGJkZmBgYGRkYGRiYmJkYGdgZGRiZmBgYGBgZmRiYGDgAAMAEE+zQ70w7XwAAAAASUVORK5CYII='); /* Grain layer */
+    background-size: auto;
+    background-blend-mode: overlay;
+    opacity: 0.5; /* Subtle grain overlay */
+}
+
+.epilogue-text {
+    font-family: 'ITC Mendoza Roman', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: rgba(240, 240, 240, 0.8); /* Slightly transparent white */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    /* text-shadow: 0 0 15px rgba(174, 184, 177, 0.7), 0 0 30px rgba(174, 184, 177, 0.4); */ /* Removed as it's now handled by the animation */
+    z-index: 3; /* Ensure text is above the background and its grain overlay */
+    padding: 20px;
+    background: rgba(0,0,0,0.3); /* Slight background for text readability */
+}
+/* Footer Pulse Glow */
+.footer-text {
+    font-family: 'ITC Mendoza Roman', sans-serif; 
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    opacity: 0.9;
+    
+    /* Muted gray-green pulse glow */
+    text-shadow: 0 0 8px rgba(174, 184, 177, 0.8), 0 0 20px rgba(174, 184, 177, 0.5);
+    animation: pulseGlow 6s infinite alternate ease-in-out;
+}
+/* Keyframe Animations - UPDATED with new color */
+@keyframes pulseGlow {
+    0% { 
+        opacity: 0.9; 
+        text-shadow: 0 0 8px rgba(174, 184, 177, 0.8), 0 0 20px rgba(174, 184, 177, 0.5); 
+    }
+    100% { 
+        opacity: 1; 
+        text-shadow: 0 0 15px rgba(174, 184, 177, 1), 0 0 30px rgba(174, 184, 177, 0.7); 
+    }
+}
+
+@font-face {
+    font-family: 'ITC Mendoza Roman';
+    src: url('ITC Mendoza Roman Std Medium.otf') format('opentype');
+    font-weight: 500; /* Medium weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.gstatic.com/s/montserrat/v25/JTURjIg1_i6t8kCHKm45_cJD6L0.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W7x.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+/* Saturation animation */
+@keyframes saturatePhoto {
+    0%, 100% {
+        filter: grayscale(70%) brightness(0.9);
+    }
+    25% {
+        filter: grayscale(50%) saturate(80%) brightness(0.9);
+    }
+    50% {
+        filter: grayscale(30%) saturate(90%) brightness(0.9);
+    }
+    75% {
+        filter: grayscale(10%) saturate(100%) brightness(0.9);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulsePhoto {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.035);
+    }
+    50% {
+        transform: scale(1.07);
+    }
+    75% {
+        transform: scale(1.035);
+    }
+}
+
+/* Photo styles */
+.couple-photo {
+    max-width: 60vw; /* Reduced from 85vw to make the photo smaller */
+    height: auto;
+    display: block;
+    opacity: 0.9;
+    border: none;
+    mix-blend-mode: luminosity;
+    transform-origin: center center;
+    will-change: transform, filter; /* Optimize animation performance */
+    
+    /* Smooth animations with ease-in-out timing */
+    animation: 
+        saturatePhoto 15s ease-in-out infinite,
+        pulsePhoto 18s ease-in-out infinite;
+}
+
+
+/*
+--- Epilogue Heart Animation ---
+*/
+
+/* 1. Define the fade-in glow animation */
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    /* Start with a soft, subtle glow */
+    text-shadow: 0 0 5px rgba(174, 184, 177, 0.5), 0 0 10px rgba(174, 184, 177, 0.3);
+  }
+  50% {
+    opacity: 1;
+    /* Glow brighter as it appears */
+    text-shadow: 0 0 15px rgba(174, 184, 177, 1), 0 0 30px rgba(174, 184, 177, 0.7);
+  }
+  100% {
+    opacity: 1;
+    /* Settle on the final, resting glow (from your original .epilogue-text style) */
+    text-shadow: 0 0 15px rgba(174, 184, 177, 0.7), 0 0 30px rgba(174, 184, 177, 0.4);
+  }
+}
+
+/* 2. Style the individual words */
+.epilogue-text .heart-word {
+  white-space: pre-wrap; /* Respects the space between "THEN," and "NOW," */
+  opacity: 0;          /* Start invisible */
+  
+  /* Apply the animation: 1.5s duration, 'forwards' makes it stay at 100% state */
+  animation: fadeInGlow 1.5s ease-in-out forwards;
+}
+
+/* 3. Stagger the animation delay for each word */
+/* We use :nth-child() to select each span in order */
+
+/* === DELAY UPDATED: Added 10s to each value === */
+.epilogue-text .heart-word:nth-child(1) { animation-delay: 10.5s; } /* THEN, */
+.epilogue-text .heart-word:nth-child(2) { animation-delay: 11.0s; } /* NOW, */
+.epilogue-text .heart-word:nth-child(3) { animation-delay: 11.5s; } /* FOREVER */
+.epilogue-text .heart-word:nth-child(4) { animation-delay: 12.0s; } /* AND */
+.epilogue-text .heart-word:nth-child(5) { animation-delay: 12.5s; } /* LONG */
+.epilogue-text .heart-word:nth-child(6) { animation-delay: 13.0s; } /* AFTER */
+.epilogue-text .heart-word:nth-child(7) { animation-delay: 13.5s; } /* ETERNITY. */
+.epilogue-text .heart-word:nth-child(8) { animation-delay: 14.2s; } /* I (slight pause) */
+.epilogue-text .heart-word:nth-child(9) { animation-delay: 14.7s; } /* LOVE */
+.epilogue-text .heart-word:nth-child(10){ animation-delay: 15.2s; } /* YOU */
+
+
+/* ============================================================
+== 2. MUSIC PLAYER STYLES (PULL-DOWN DRAWER)
+============================================================
+*/
+
+/* --- NEW TAB LOGIC --- */
+/* (We moved the tab INSIDE the container in the HTML) */
+
+#music-player-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    /* The container itself slides */
+    transform: translateY(-100%);
+    /* Add a small delay so the tab can hide first */
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+}
+
+#music-player-container.open {
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+#music-player {
+    /* (styles from before are fine) */
+    position: relative;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+    padding: 20px 5vw;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Add this to ensure padding doesn't break layout */
+}
+
+/* The visible tab is now PART of the sliding container */
+#music-tab {
+    position: absolute;
+    top: 100%; /* Hang from the bottom of the player */
+    
+    /* === UPDATED FOR RIGHT ALIGNMENT === */
+    left: auto; /* Remove center alignment */
+    right: 30px; /* Position 30px from the right */
+    transform: none; /* Remove horizontal translation */
+    
+    background: rgba(80, 80, 80, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 15px;
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    color: rgba(220, 220, 220, 0.8);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
+    /* Fade out when the player is open */
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+#music-tab:hover {
+    background: rgba(100, 100, 100, 0.7);
+    color: #fff;
+}
+
+/* When player is open, fade out the tab */
+#music-player-container.open #music-tab {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Style for the "Starry Eyes" title inside the player */
+.player-title {
+    font-family: 'ITC Mendoza Roman', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #e0e0e0; /* Lighter text */
+    text-shadow: 0 0 5px rgba(220, 220, 220, 0.5); /* Lighter glow */
+    margin: 0 0 15px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* The "cross" close button */
+#close-player-btn {
+    position: absolute;
+    top: 15px;
+    /* Make sure this is also responsive */
+    right: max(20px, 5vw); 
+    color: rgba(200, 200, 200, 0.6); /* Lighter grey */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#close-player-btn:hover {
+    color: #fff; /* Bright white on hover */
+    transform: rotate(90deg);
+}
+
+/* Style the default HTML5 audio player */
+#song-player {
+    width: 100%;
+    max-width: 500px; /* Stop it from getting too wide on desktop */
+    margin-top: 10px;
+    /* New filter to match the greyscale, light-grey aesthetic */
+    filter: saturate(0) brightness(1.7) contrast(1) invert(0.95);
+}
+
